@@ -17,7 +17,7 @@ if len(sys.argv) == 1:
 # Parse command-line arguments
 args = parser.parse_args()
 
-# Parse command-line arguments
+# Convert sequence to upper-case
 args.seq = args.seq.upper()
 
 # Classify the sequence
