@@ -22,14 +22,25 @@ args.seq = args.seq.upper()
 
 # Classify the sequence
 if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq):
-        print ('The sequence is DNA')
-    elif re.search('U', args.seq):
-        print ('The sequence is RNA')
+
+    # DNA contains T but not U
+    if 'T' in args.seq and 'U' not in args.seq:
+        print('The sequence is DNA')
+
+    # RNA contains U but not T
+    elif 'U' in args.seq and 'T' not in args.seq:
+        print('The sequence is RNA')
+
+    # Only A,C,G
+    elif 'T' not in args.seq and 'U' not in args.seq:
+        print('The sequence can be DNA or RNA')
+
+    # Invalid sequence containing both T and U
     else:
-        print ('The sequence can be DNA or RNA')
+        print('The sequence is not DNA nor RNA')
+
 else:
-    print ('The sequence is not DNA nor RNA')
+    print('The sequence is not DNA nor RNA')
 
 # Search for a motif if provided
 if args.motif:
