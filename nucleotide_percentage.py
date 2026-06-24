@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 # Import required modules
-import sys
-import re
+import sys, re
 from argparse import ArgumentParser
 
 # Define command-line arguments
